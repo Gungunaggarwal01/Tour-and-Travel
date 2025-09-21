@@ -1,167 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>X-Travels</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>X-Travels</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="style3.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </head>
 
-    <!-- Font Imports -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Font Imports -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="style2.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-
-<body>
-    <!-- ✅ HEADER -->
-    <header class="main-header">
-        <div class="header-content">
-            <a href="index.html" class="logo-link">
-                <h1>X-Travels</h1>
-            </a>
-            <div class="hamburger" id="hamburger">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
+    <body>
+        <!-- ✅ HEADER -->
+        <header class="main-header">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                    <h1>X-Travels</h1>
+                </a>
+                <div class="hamburger" id="hamburger">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+                <nav class="nav-menu" id="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destination.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-menu" id="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destination.html">Destinations</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        </header>
 
+        <!-- ✅ INTRO TEXT -->
+        <section class="intro-text">
+            <h1>Your Next Adventure Starts Here</h1>
+            <p>Let <span class="highlight-yellow">X-Travels</span> Plan the
+                Perfect Getaway Just for You</p>
+        </section>
 
-    <section class="intro-text">
-        <h1><span>X-Travels</span></h1>
-        <h3>Turn your travel dreams into reality with </h3>
-        </h1>
-    </section>
+        <!-- card-slider -->
+        <section class="card-slider-section">
+            <h2 class="section-title">Our Packages</h2>
+            <div class="card-list">
+                <div class="offer-card">
+                    <img src="images/hotel.png" alt="Luxury Hotel">
+                    <div class="offer-details">
+                        <h3>Kashmir, India</h3>
+                        <p><strong>Offer:</strong> 25% off on premium stays</p>
+                        <p><strong>Guide:</strong> Enjoy 5-star amenities and
+                            city tours</p>
+                        <button class="card-button"
+                            onclick="openBookingModal('Kashmir, India', '25% off on premium stays', 'Enjoy 5-star amenities and city tours')">Details</button>
+                    </div>
+                </div>
 
+                <div class="offer-card">
+                    <img src="images/scenary2.png" alt="Beautiful Places">
+                    <div class="offer-details">
+                        <h3>Banff, Canada</h3>
+                        <p><strong>Offer:</strong> Special prices on curated
+                            locations</p>
+                        <p><strong>Guide:</strong> Natural spots, hikes, and
+                            photoshoots</p>
+                        <button class="card-button"
+                            onclick="openBookingModal('Banff, Canada', 'Special prices on curated locations', 'Natural spots, hikes, and photoshoots')">Details</button>
+                    </div>
+                </div>
 
-    <section class="destination-section">
-        <h2 class="destination-heading">Top Destinations</h2>
+                <div class="offer-card">
+                    <img src="images/hawai.png" alt="Hawaii">
+                    <div class="offer-details">
+                        <h3>Maui, Hawaii</h3>
+                        <p><strong>Offer:</strong> 30% Off on Honeymoon
+                            Packages</p>
+                        <p><strong>Guide:</strong> Description or highlight of
+                            the trip</p>
+                        <button class="card-button"
+                            onclick="openBookingModal('Maui, Hawaii', '30% Off on Honeymoon Packages', 'Description or highlight of the trip')">Details</button>
+                    </div>
+                </div>
 
-        <div class="destination-grid">
+                <div class="offer-card">
+                    <img src="images/scenary1.png" alt="Beautiful Scenery">
+                    <div class="offer-details">
+                        <h3>Leh, Ladakh</h3>
+                        <p><strong>Offer:</strong> 2-for-1 scenic trail
+                            passes.</p>
+                        <p><strong>Guide:</strong> Romantic getaways,
+                            candlelight dinners, and private sightseeing</p>
+                        <button class="card-button"
+                            onclick="openBookingModal('Leh, Ladakh', '2-for-1 scenic trail passes', 'Romantic getaways, candlelight dinners, and private sightseeing')">Details</button>
+                    </div>
+                </div>
 
-            <div class="destination-card">
-                <img src="images/rome.png" alt="Rome, Italy">
-                <h3>Rome, Italy</h3>
-                <a href="contact.html" class="package-button">3N/4D Package</a>
+                <div class="offer-card">
+                    <img src="images/manali.png" alt="Hawaii">
+                    <div class="offer-details">
+                        <h3>Manali, India</h3>
+                        <p><strong>Offer:</strong> 50% Off on Honeymoon
+                            Packages</p>
+                        <p><strong>Guide:</strong> Secluded stays, sunset views,
+                            and couple adventures</p>
+                        <button class="card-button"
+                            onclick="openBookingModal('Manali, India', '50% Off on Honeymoon Packages', 'Secluded stays, sunset views, and couple adventures')">Details</button>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <img src="images/udaipur.png" alt="Hawaii">
+                    <div class="offer-details">
+                        <h3>Udaipur, India</h3>
+                        <p><strong>Offer:</strong> Flat 35% Off on Heritage
+                            Stays & Cultural Tours</p>
+                        <p><strong>Guide:</strong> Explore royal palaces,
+                            tranquil lakes, and lively markets. Enjoy boat
+                            rides, sunset views, and traditional dinners</p>
+                        <button class="card-button"
+                            onclick="openBookingModal('Udaipur, India', 'Flat 35% Off on Heritage Stays & Cultural Tours', 'Explore royal palaces, tranquil lakes, and lively markets. Enjoy boat rides, sunset views, and traditional dinners')">Details</button>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="destination-card">
-                <img src="images/leh.png" alt="Leh-Ladakh">
-                <h3>Leh-Ladakh</h3>
-                <a href="contact.html" class="package-button">4N/5D Package</a>
-            </div>
-
-            <div class="destination-card">
-                <img src="images/switer.png" alt="Switzerland">
-                <h3>Swiss Alps, Switzerland</h3>
-                <a href="contact.html" class="package-button">2N/3D Package</a>
-            </div>
-
-            <div class="destination-card">
-                <img src="images/japan.png" alt="Mt. Fuji, Tokyo">
-                <h3>Mt. Fuji, Tokyo</h3>
-                <a href="contact.html" class="package-button">3N/4D Package</a>
-            </div>
-
-            <div class="destination-card">
-                <img src="images/taj.png" alt="Taj Mahal, Agra">
-                <h3>Taj Mahal, Agra</h3>
-                <a href="contact.html" class="package-button">1N/2D Package</a>
-            </div>
-
-            <div class="destination-card">
-                <img src="images/darjeeling.png" alt="Bali, Indonesia">
-                <h3>Bali, Indonesia</h3>
-                <a href="contact.html" class="package-button">6N/7D Package</a>
-            </div>
-
-            <div class="destination-card">
-                <img src="images/ooty.png" alt="Ooty, Tamil Nadu">
-                <h3>Ooty, Tamil Nadu</h3>
-                <a href="contact.html" class="package-button">4N/5D Package</a>
-            </div>
-
-            <div class="destination-card">
-                <img src="images/kalka.png" alt="Kalka, Haryana">
-                <h3>Kalka, Haryana</h3>
-                <a href="contact.html" class="package-button">2N/3D Package</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ✅ FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Left: Company Info -->
-            <div class="footer-left">
-                <h2>X-Travels</h2>
-                <p>Your trusted travel partner for unforgettable journeys.</p>
-                <p><strong>Address:</strong><br>
-                    2nd Floor, Galaxy Plaza,<br>
-                    Sector 15, Gurugram, Haryana - 122001<br>
-                    India</p>
-                <p><strong>Email:</strong> contact@x-travels.com</p>
-                <p><strong>Phone:</strong> +91 98765 43210</p>
-            </div>
-
-            <!-- Right: Quick Links -->
-            <div class="footer-right">
-                <ul style="list-style-type: none;">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destination.html">Destinations</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Center: Social Icons -->
-            <div class="footer-center">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/" target="_blank" class="instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/" target="_blank" class="facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.youtube.com/" target="_blank" class="youtube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://twitter.com/" target="_blank" class="twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://pinterest.com/" target="_blank" class="pinterest">
-                        <i class="fab fa-pinterest"></i>
-                    </a>
+        <!-- ✅ PACKAGE DETAILS MODAL -->
+        <div id="bookingModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Package Details</h2>
+                <div class="modal-body">
+                    <div class="package-info">
+                        <h3 id="modalPackageName">Package Name</h3>
+                        <p id="modalPackageOffer">Package Offer</p>
+                        <p id="modalPackageGuide">Package Guide</p>
+                    </div>
+                    <div class="package-details">
+                        <div class="detail-section">
+                            <h4><i class="fas fa-map-marker-alt"></i>
+                                Location</h4>
+                            <p id="modalLocation">Location details</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4><i class="fas fa-rupee-sign"></i> Price</h4>
+                            <p id="modalPrice">Price details</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4><i class="fas fa-utensils"></i> Meals</h4>
+                            <p id="modalMeals">Meal details</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4><i class="fas fa-bed"></i> Accommodation</h4>
+                            <p id="modalBeds">Bed details</p>
+                            <p id="modalBHK">BHK details</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4><i class="fas fa-wifi"></i> Facilities</h4>
+                            <div id="modalFacilities" class="facilities-list">
+                                <!-- Facilities will be populated here -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="copyright">
-            &copy; 2025 X-Travels. All rights reserved.
-        </div>
-    </footer>
+        <!-- ✅ FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Left: Company Info -->
+                <div class="footer-left">
+                    <h2>X-Travels</h2>
+                    <p>Your trusted travel partner for unforgettable
+                        journeys.</p>
+                    <p><strong>Address:</strong><br>
+                        2nd Floor, Galaxy Plaza,<br>
+                        Sector 15, Gurugram, Haryana - 122001<br>
+                        India</p>
+                    <p><strong>Email:</strong> contact@x-travels.com</p>
+                    <p><strong>Phone:</strong> +91 98765 43210</p>
+                </div>
 
-    <script>
+                <!-- Right: Quick Links -->
+                <div class="footer-right">
+                    <ul style="list-style-type: none;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destination.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Center: Social Icons -->
+                <div class="footer-center">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/" target="_blank"
+                            class="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank"
+                            class="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank"
+                            class="youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank"
+                            class="twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://pinterest.com/" target="_blank"
+                            class="pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2025 X-Travels. All rights reserved.
+            </div>
+        </footer>
+
+        <script>
         // Toggle Menu Function
         function toggleMenu() {
             const nav = document.getElementById("nav-menu");
@@ -186,8 +256,121 @@
             event.stopPropagation();
             toggleMenu();
         });
-    </script>
 
-</body>
+        // Package details data
+        const packageDetails = {
+            'Kashmir, India': {
+                location: 'Srinagar, Jammu & Kashmir, India',
+                price: '₹25,999 per person (25% off)',
+                meals: 'Breakfast, Lunch & Dinner included',
+                beds: '2 Queen size beds',
+                bhk: '2 BHK Deluxe Room',
+                facilities: ['Free WiFi', 'Air Conditioning', 'Room Service', 'Swimming Pool', 'Spa & Wellness', 'Airport Transfer', 'City Tour Guide']
+            },
+            'Banff, Canada': {
+                location: 'Banff National Park, Alberta, Canada',
+                price: '₹45,999 per person (Special rates)',
+                meals: 'Continental Breakfast & 2-course dinner',
+                beds: '1 King bed + 1 Sofa bed',
+                bhk: '1 BHK Mountain View Suite',
+                facilities: ['Free WiFi', 'Heating', 'Kitchenette', 'Hiking Equipment', 'National Park Pass', 'Wildlife Tour', 'Photography Guide']
+            },
+            'Maui, Hawaii': {
+                location: 'Maui Island, Hawaii, USA',
+                price: '₹65,999 per person (30% off honeymoon)',
+                meals: 'All meals included + Romantic dinner',
+                beds: '1 King bed (Ocean view)',
+                bhk: '1 BHK Beachfront Villa',
+                facilities: ['Free WiFi', 'Air Conditioning', 'Private Beach Access', 'Snorkeling Gear', 'Sunset Cruise', 'Couples Spa', 'Hawaiian Luau']
+            },
+            'Leh, Ladakh': {
+                location: 'Leh, Ladakh, India',
+                price: '₹18,999 per person (2-for-1 offer)',
+                meals: 'Traditional Ladakhi meals',
+                beds: '2 Single beds',
+                bhk: '1 BHK Traditional Room',
+                facilities: ['Free WiFi', 'Heating', 'Oxygen Support', 'Mountain Biking', 'Monastery Tours', 'Photography Spots', 'Cultural Shows']
+            },
+            'Manali, India': {
+                location: 'Manali, Himachal Pradesh, India',
+                price: '₹22,999 per person (50% off honeymoon)',
+                meals: 'Breakfast & Dinner included',
+                beds: '1 King bed (Mountain view)',
+                bhk: '1 BHK Honeymoon Suite',
+                facilities: ['Free WiFi', 'Heating', 'Private Balcony', 'Adventure Activities', 'Couple Spa', 'Sunset Point Access', 'Local Sightseeing']
+            },
+            'Udaipur, India': {
+                location: 'Udaipur, Rajasthan, India',
+                price: '₹28,999 per person (35% off heritage)',
+                meals: 'Royal Rajasthani cuisine',
+                beds: '1 King bed (Lake view)',
+                bhk: '1 BHK Heritage Palace Room',
+                facilities: ['Free WiFi', 'Air Conditioning', 'Boat Ride', 'Palace Tours', 'Cultural Shows', 'Traditional Dinner', 'Shopping Guide']
+            }
+        };
+
+        // Modal Functions
+        function openBookingModal(packageName, offer, guide) {
+            const modal = document.getElementById("bookingModal");
+            const packageNameElement = document.getElementById("modalPackageName");
+            const packageOfferElement = document.getElementById("modalPackageOffer");
+            const packageGuideElement = document.getElementById("modalPackageGuide");
+            
+            // Get package details
+            const details = packageDetails[packageName] || {};
+            
+            // Update modal content with package details
+            packageNameElement.textContent = packageName;
+            packageOfferElement.innerHTML = `<strong>Offer:</strong> ${offer}`;
+            packageGuideElement.innerHTML = `<strong>Guide:</strong> ${guide}`;
+            
+            // Update detailed information
+            document.getElementById('modalLocation').textContent = details.location || 'Location details';
+            document.getElementById('modalPrice').textContent = details.price || 'Price details';
+            document.getElementById('modalMeals').textContent = details.meals || 'Meal details';
+            document.getElementById('modalBeds').textContent = details.beds || 'Bed details';
+            document.getElementById('modalBHK').textContent = details.bhk || 'BHK details';
+            
+            // Update facilities
+            const facilitiesContainer = document.getElementById('modalFacilities');
+            if (details.facilities && details.facilities.length > 0) {
+                facilitiesContainer.innerHTML = details.facilities.map(facility => 
+                    `<span class="facility-item"><i class="fas fa-check"></i> ${facility}</span>`
+                ).join('');
+            } else {
+                facilitiesContainer.innerHTML = '<p>Facilities details</p>';
+            }
+            
+            // Show modal
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById("bookingModal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Close modal when clicking the X button
+        document.querySelector('.close').addEventListener('click', closeBookingModal);
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById("bookingModal");
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBookingModal();
+            }
+        });
+
+    </script>
+    </body>
 
 </html>

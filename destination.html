@@ -59,53 +59,101 @@
             <div class="destination-card">
                 <img src="images/rome.png" alt="Rome, Italy">
                 <h3>Rome, Italy</h3>
-                <a href="contact.html" class="package-button">3N/4D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Rome, Italy', '3N/4D Package')">3N/4D Package</button>
             </div>
 
             <div class="destination-card">
                 <img src="images/leh.png" alt="Leh-Ladakh">
                 <h3>Leh-Ladakh</h3>
-                <a href="contact.html" class="package-button">4N/5D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Leh-Ladakh', '4N/5D Package')">4N/5D Package</button>
             </div>
 
             <div class="destination-card">
                 <img src="images/switer.png" alt="Switzerland">
                 <h3>Swiss Alps, Switzerland</h3>
-                <a href="contact.html" class="package-button">2N/3D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Swiss Alps, Switzerland', '2N/3D Package')">2N/3D Package</button>
             </div>
 
             <div class="destination-card">
                 <img src="images/japan.png" alt="Mt. Fuji, Tokyo">
                 <h3>Mt. Fuji, Tokyo</h3>
-                <a href="contact.html" class="package-button">3N/4D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Mt. Fuji, Tokyo', '3N/4D Package')">3N/4D Package</button>
             </div>
 
             <div class="destination-card">
                 <img src="images/taj.png" alt="Taj Mahal, Agra">
                 <h3>Taj Mahal, Agra</h3>
-                <a href="contact.html" class="package-button">1N/2D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Taj Mahal, Agra', '1N/2D Package')">1N/2D Package</button>
             </div>
 
             <div class="destination-card">
                 <img src="images/darjeeling.png" alt="Bali, Indonesia">
                 <h3>Bali, Indonesia</h3>
-                <a href="contact.html" class="package-button">6N/7D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Bali, Indonesia', '6N/7D Package')">6N/7D Package</button>
             </div>
 
             <div class="destination-card">
                 <img src="images/ooty.png" alt="Ooty, Tamil Nadu">
                 <h3>Ooty, Tamil Nadu</h3>
-                <a href="contact.html" class="package-button">4N/5D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Ooty, Tamil Nadu', '4N/5D Package')">4N/5D Package</button>
             </div>
 
             <div class="destination-card">
                 <img src="images/kalka.png" alt="Kalka, Haryana">
                 <h3>Kalka, Haryana</h3>
-                <a href="contact.html" class="package-button">2N/3D Package</a>
+                <button class="package-button" onclick="openDestinationModal('Kalka, Haryana', '2N/3D Package')">2N/3D Package</button>
             </div>
 
         </div>
     </section>
+
+    <!-- ✅ DESTINATION DETAILS MODAL -->
+    <div id="destinationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Destination Details</h2>
+            <div class="modal-body">
+                <div class="destination-info">
+                    <h3 id="modalDestinationName">Destination Name</h3>
+                    <p id="modalPackageType">Package Type</p>
+                </div>
+                <div class="destination-details">
+                    <div class="detail-section">
+                        <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                        <p id="modalLocation">Location details</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4><i class="fas fa-rupee-sign"></i> Price</h4>
+                        <p id="modalPrice">Price details</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4><i class="fas fa-calendar-alt"></i> Duration</h4>
+                        <p id="modalDuration">Duration details</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4><i class="fas fa-utensils"></i> Meals</h4>
+                        <p id="modalMeals">Meal details</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4><i class="fas fa-bed"></i> Accommodation</h4>
+                        <p id="modalAccommodation">Accommodation details</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4><i class="fas fa-star"></i> Highlights</h4>
+                        <div id="modalHighlights" class="highlights-list">
+                            <!-- Highlights will be populated here -->
+                        </div>
+                    </div>
+                    <div class="detail-section">
+                        <h4><i class="fas fa-wifi"></i> Facilities</h4>
+                        <div id="modalFacilities" class="facilities-list">
+                            <!-- Facilities will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ✅ FOOTER -->
     <footer class="footer">
@@ -185,6 +233,151 @@
         document.getElementById("hamburger").addEventListener("click", function (event) {
             event.stopPropagation();
             toggleMenu();
+        });
+
+        // Destination details data
+        const destinationDetails = {
+            'Rome, Italy': {
+                location: 'Rome, Lazio, Italy',
+                price: '₹45,999 per person',
+                duration: '3 Nights / 4 Days',
+                meals: 'Breakfast & 2-course dinner included',
+                accommodation: '4-star hotel in city center',
+                highlights: ['Colosseum Tour', 'Vatican City', 'Trevi Fountain', 'Roman Forum', 'Spanish Steps', 'Sistine Chapel'],
+                facilities: ['Free WiFi', 'Air Conditioning', 'City Tour Guide', 'Airport Transfer', 'Museum Passes', 'Local Transportation']
+            },
+            'Leh-Ladakh': {
+                location: 'Leh, Ladakh, India',
+                price: '₹28,999 per person',
+                duration: '4 Nights / 5 Days',
+                meals: 'Traditional Ladakhi meals',
+                accommodation: 'Mountain resort with heating',
+                highlights: ['Pangong Lake', 'Nubra Valley', 'Khardung La Pass', 'Monastery Tours', 'Camel Safari', 'Stargazing'],
+                facilities: ['Free WiFi', 'Heating', 'Oxygen Support', 'Mountain Biking', 'Photography Spots', 'Cultural Shows']
+            },
+            'Swiss Alps, Switzerland': {
+                location: 'Swiss Alps, Switzerland',
+                price: '₹75,999 per person',
+                duration: '2 Nights / 3 Days',
+                meals: 'Swiss breakfast & dinner',
+                accommodation: 'Alpine chalet with mountain view',
+                highlights: ['Matterhorn View', 'Cable Car Rides', 'Alpine Hiking', 'Swiss Chocolate Tour', 'Lake Geneva', 'Jungfraujoch'],
+                facilities: ['Free WiFi', 'Heating', 'Ski Equipment', 'Mountain Pass', 'Scenic Train Rides', 'Photography Guide']
+            },
+            'Mt. Fuji, Tokyo': {
+                location: 'Tokyo, Japan',
+                price: '₹55,999 per person',
+                duration: '3 Nights / 4 Days',
+                meals: 'Japanese breakfast & dinner',
+                accommodation: 'Traditional ryokan & modern hotel',
+                highlights: ['Mt. Fuji Viewing', 'Tokyo Skytree', 'Senso-ji Temple', 'Shibuya Crossing', 'Tsukiji Market', 'Cherry Blossom Spots'],
+                facilities: ['Free WiFi', 'JR Pass', 'City Tour Guide', 'Temple Visits', 'Shopping Guide', 'Cultural Experiences']
+            },
+            'Taj Mahal, Agra': {
+                location: 'Agra, Uttar Pradesh, India',
+                price: '₹12,999 per person',
+                duration: '1 Night / 2 Days',
+                meals: 'Breakfast & lunch included',
+                accommodation: 'Heritage hotel near Taj Mahal',
+                highlights: ['Taj Mahal Sunrise', 'Agra Fort', 'Fatehpur Sikri', 'Itmad-ud-Daulah', 'Mehtab Bagh', 'Local Bazaars'],
+                facilities: ['Free WiFi', 'Air Conditioning', 'Heritage Guide', 'Photography Spots', 'Local Transportation', 'Cultural Shows']
+            },
+            'Bali, Indonesia': {
+                location: 'Bali, Indonesia',
+                price: '₹35,999 per person',
+                duration: '6 Nights / 7 Days',
+                meals: 'Balinese cuisine & international',
+                accommodation: 'Beach resort with pool',
+                highlights: ['Ubud Rice Terraces', 'Tanah Lot Temple', 'Mount Batur Sunrise', 'Water Temples', 'Beach Hopping', 'Cultural Villages'],
+                facilities: ['Free WiFi', 'Air Conditioning', 'Beach Access', 'Spa Services', 'Island Tours', 'Water Sports']
+            },
+            'Ooty, Tamil Nadu': {
+                location: 'Ooty, Tamil Nadu, India',
+                price: '₹18,999 per person',
+                duration: '4 Nights / 5 Days',
+                meals: 'South Indian & continental',
+                accommodation: 'Hill station resort',
+                highlights: ['Tea Plantations', 'Ooty Lake', 'Botanical Gardens', 'Doddabetta Peak', 'Rose Garden', 'Nilgiri Mountain Railway'],
+                facilities: ['Free WiFi', 'Heating', 'Tea Estate Tours', 'Toy Train Ride', 'Nature Walks', 'Photography Spots']
+            },
+            'Kalka, Haryana': {
+                location: 'Kalka, Haryana, India',
+                price: '₹8,999 per person',
+                duration: '2 Nights / 3 Days',
+                meals: 'North Indian meals',
+                accommodation: 'Hill station hotel',
+                highlights: ['Kalka-Shimla Railway', 'Mansa Devi Temple', 'Pinjore Gardens', 'Kasauli Hills', 'Chail Palace', 'Local Markets'],
+                facilities: ['Free WiFi', 'Heating', 'Toy Train Pass', 'Temple Visits', 'Hill Station Tours', 'Local Guide']
+            }
+        };
+
+        // Modal Functions
+        function openDestinationModal(destinationName, packageType) {
+            const modal = document.getElementById("destinationModal");
+            const destinationNameElement = document.getElementById("modalDestinationName");
+            const packageTypeElement = document.getElementById("modalPackageType");
+            
+            // Get destination details
+            const details = destinationDetails[destinationName] || {};
+            
+            // Update modal content with destination details
+            destinationNameElement.textContent = destinationName;
+            packageTypeElement.innerHTML = `<strong>Package:</strong> ${packageType}`;
+            
+            // Update detailed information
+            document.getElementById('modalLocation').textContent = details.location || 'Location details';
+            document.getElementById('modalPrice').textContent = details.price || 'Price details';
+            document.getElementById('modalDuration').textContent = details.duration || 'Duration details';
+            document.getElementById('modalMeals').textContent = details.meals || 'Meal details';
+            document.getElementById('modalAccommodation').textContent = details.accommodation || 'Accommodation details';
+            
+            // Update highlights
+            const highlightsContainer = document.getElementById('modalHighlights');
+            if (details.highlights && details.highlights.length > 0) {
+                highlightsContainer.innerHTML = details.highlights.map(highlight => 
+                    `<span class="highlight-item"><i class="fas fa-star"></i> ${highlight}</span>`
+                ).join('');
+            } else {
+                highlightsContainer.innerHTML = '<p>Highlights details</p>';
+            }
+            
+            // Update facilities
+            const facilitiesContainer = document.getElementById('modalFacilities');
+            if (details.facilities && details.facilities.length > 0) {
+                facilitiesContainer.innerHTML = details.facilities.map(facility => 
+                    `<span class="facility-item"><i class="fas fa-check"></i> ${facility}</span>`
+                ).join('');
+            } else {
+                facilitiesContainer.innerHTML = '<p>Facilities details</p>';
+            }
+            
+            // Show modal
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        function closeDestinationModal() {
+            const modal = document.getElementById("destinationModal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Close modal when clicking the X button
+        document.querySelector('.close').addEventListener('click', closeDestinationModal);
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById("destinationModal");
+            if (event.target === modal) {
+                closeDestinationModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeDestinationModal();
+            }
         });
     </script>
 
