@@ -9,7 +9,7 @@
 html,
 body {
     scroll-behavior: smooth;
-    background: url('images/beach.png') no-repeat center center;
+    background: url('images/back.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
@@ -36,6 +36,15 @@ body {
 .header-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-link h1 {
+    color: white;
+    text-decoration: none;
 }
 
 /* === NAV MENU === */
@@ -78,7 +87,7 @@ body {
     width: 100%;
 }
 
-/* Hamburger */
+/* === Hamburger === */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -92,16 +101,7 @@ body {
     background-color: white;
 }
 
-.logo-link {
-    text-decoration: none;
-}
-
-.logo-link h1 {
-    color: white;
-    text-decoration: none;
-}
-
-/* Intro Section */
+/* === INTRO SECTION === */
 .intro-text {
     display: flex;
     flex-direction: column;
@@ -109,7 +109,6 @@ body {
     align-items: center;
     height: 90dvh;
     min-height: 90dvb;
-
 }
 
 .intro-text h1 {
@@ -121,110 +120,94 @@ body {
     color: #f39c12;
 }
 
-
-/* === ABOUT SECTION (White Background, Like Feature Section) === */
-.about-container {
-    width: 100%;
-    padding: 60px 20px;
+/* === OUR PACKAGES CARD SECTION === */
+.card-slider-section {
+    padding: 80px 5%;
     background-color: rgba(255, 255, 255, 0.85);
-    color: #111;
-    border-radius: 0;
-    box-shadow: none;
     text-align: center;
-    position: relative;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
-.about-container h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+.section-title {
+    font-size: 2.4rem;
+    color: #333;
+    margin-bottom: 40px;
     font-family: 'Playfair Display', serif;
-    color: #222;
 }
 
-.what-we-do {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 50px;
-}
-
-.what-we-do li {
-    font-size: 1.2rem;
-    color: #444;
-    margin: 12px 0;
-}
-
-/* === TEAM SECTION === */
-.team-grid {
+.card-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-}
-
-.team-member {
-    background-color: #eaeaea;
-    /* Slightly darker grey for contrast */
+    gap: 20px;
     padding: 20px;
-    border-radius: 12px;
-    width: 220px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* Soft shadow */
+    align-items: flex-start;
+    /* prevent stretching */
 }
 
-.team-member:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    /* Deeper shadow on hover */
-    border: 2px solid #3498db;
-    /* Light blue border on hover */
+.offer-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    /* important */
+    margin: auto;
 }
 
-.team-member img {
-    width: 140px;
-    height: 140px;
+.offer-card img {
+    height: auto;
     object-fit: cover;
-    margin-bottom: 15px;
-    border: 4px solid #f1c40f;
-    border-radius: 0;
-    /* Makes the image perfectly square */
+    display: block;
+    border-radius: 16px 16px 0 0;
 }
 
-.team-member h4 {
-    margin-bottom: 6px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #222;
+.offer-details {
+    padding: 15px 20px;
+    text-align: center;
+    flex: 0 0 auto;
+    color: #000; /* ✅ Make text visible */
 }
 
-.team-member p {
-    font-size: 1rem;
-    color: #555;
+
+.offer-card:hover {
+    transform: translateY(-6px);
 }
 
-/* === Responsive === */
-@media screen and (max-width: 768px) {
-    .about-container {
-        padding: 40px 20px;
-        margin: 80px 10px;
-    }
+.offer-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
 
-    .about-container h2 {
-        font-size: 2rem;
-    }
+.offer-details p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
 
-    .team-member {
-        width: 100%;
-        max-width: 280px;
-    }
+.card-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
 
-    .team-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+.card-button:hover {
+    background-color: #f39c12;
+    color: #000;
 }
 
 /* === FOOTER === */
@@ -320,38 +303,7 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-/* ✅ Responsive Footer */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .footer-left,
-    .footer-right,
-    .footer-center {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .footer-map iframe {
-        height: 200px;
-    }
-}
-
-.logo-link {
-    text-decoration: none;
-}
-
-.logo-link h1 {
-    color: white;
-    text-decoration: none;
-}
-
-
+/* === SOCIAL ICONS === */
 .social-icons a {
     text-decoration: none;
     font-size: 1.4rem;
@@ -371,7 +323,6 @@ body {
     pointer-events: none;
 }
 
-/* Popup effect + original hover colors */
 .social-icons a.facebook:hover {
     color: #1877f2;
     transform: scale(1.2);
@@ -397,7 +348,7 @@ body {
     transform: scale(1.2);
 }
 
-/* Responsive */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
     .nav-menu {
         position: absolute;
@@ -427,14 +378,24 @@ body {
         background-color: black;
     }
 
-    /* ✅ Improved Footer Mobile Styles */
+    .intro-text {
+        padding: 0 20px;
+        height: auto;
+        text-align: center;
+    }
+
+    .intro-text h1 {
+        font-size: 28px;
+        line-height: 1.4;
+    }
+
+
     .footer-container {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        /* Adds space between stacked sections */
-        padding: 20px;
+        gap: 30px;
         text-align: center;
+        padding: 20px;
     }
 
     .footer-left,
@@ -442,15 +403,6 @@ body {
     .footer-center {
         width: 100%;
         max-width: 500px;
-        margin-bottom: 20px;
-    }
-
-    .footer-right ul {
-        padding: 0;
-    }
-
-    .footer-right ul li {
-        margin: 8px 0;
     }
 
     .footer-map iframe {
@@ -458,135 +410,23 @@ body {
     }
 }
 
-.team-section {
-    padding: 50px 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    /* glass feel */
-    backdrop-filter: blur(6px);
-    border-radius: 16px;
-    margin: 40px auto;
-}
-
-.team-section .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.team-section .col {
-    flex: 1 1 250px;
-}
-
-.team-section img {
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-/* General column layout */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 40px 20px;
-}
-
-/* Each column */
-.col {
-    flex: 1 1 45%;
-    max-width: 45%;
-    text-align: center;
-}
-
-/* Images */
-.img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* Button styling (optional) */
-.button {
-    padding: 12px 24px;
-    margin-top: 20px;
-    background-color: #2e7d32;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.button:hover {
-    background-color: #1b5e20;
-}
-
-/* Team section image */
-.team-section img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .col {
-        flex: 1 1 100%;
-        max-width: 100%;
+@media (max-width: 768px) {
+    .card-list {
+        align-items: center;
     }
 
-    .row {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .img {
-        width: 100%;
+    .offer-card {
+        width: 90%;
         max-width: 90%;
+        height: auto !important;
+        /* force-fit to content */
+    }
+
+    .offer-card img {
         height: auto;
     }
 
-    .team-section img {
-        width: 160px;
-        height: 160px;
-    }
-
-    h1,
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.6;
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .intro-text {
-        padding: 0 20px;
-        min-height: 90dvh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .intro-text h1 {
-        font-size: 28px;
-        line-height: 1.4;
-        text-align: center;
+    .offer-details {
+        padding: 15px;
     }
 }
